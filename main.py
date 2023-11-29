@@ -11,7 +11,7 @@ model = pkl.load(input)
 
 st.header("Upload an image")
 
-image = st.file_uploader('Choose an image', type=['png', 'jpg', 'jpeg'])
+image = st.file_uploader('Choose an image', type=(['png', 'jpg', 'jpeg']))
 
 if uploaded_image is not None:
     image = Image.open(image)
