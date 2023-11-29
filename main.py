@@ -1,5 +1,5 @@
 import streamlit as st
-from PIL import Image
+from PIL import image
 import pickle as pkl
 
 class_list = {'0': 'Normal', '1': 'Pneumonia'}
