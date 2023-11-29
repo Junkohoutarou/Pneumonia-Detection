@@ -11,8 +11,9 @@ model = pkl.load(input)
 
 st.header("Upload an image")
 
-image = st.file_uploader('Choose an image', type=(['png', 'jpg', 'jpeg']))
+uploaded_image = st.file_uploader('Choose an image', type=['png', 'jpg', 'jpeg'])
 
+# Kiểm tra xem uploaded_image đã được định nghĩa hay chưa
 if uploaded_image is not None:
-    image = Image.open(image)
+    image = Image.open(uploaded_image)
     st.image(image, caption='Test image')
