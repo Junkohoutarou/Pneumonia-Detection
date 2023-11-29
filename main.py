@@ -1,17 +1,18 @@
 import streamlit as st
-from PIL import image
+from PIL import Image
 import pickle as pkl
 
-class_list = {'0':'Normal', '1': 'Pneunomia'}
+class_list = {'0': 'Normal', '1': 'Pneumonia'}
 
-st.title('Pneunomia Detrction')
+st.title('Pneumonia Detection')
 
-input = open('lrc_xray.pkl','rb')
-model= pkl.load(input)
+input = open('lrc_xray.pkl', 'rb')
+model = pkl.load(input)
 
-st.header("Upload an image')
-image= st.file.uploader('Choose an image', type=(['png','jpg','jpeg')
+st.header("Upload an image")
 
-if image os not None:
-  image = Image.open(image)
-  st.image(image, caption='Test image')
+uploaded_image = st.file_uploader('Choose an image', type=['png', 'jpg', 'jpeg'])
+
+if uploaded_image is not None:
+    image = Image.open(uploaded_image)
+    st.image(image, caption='Test image')
