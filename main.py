@@ -17,3 +17,10 @@ uploaded_image = st.file_uploader('Choose an image', type=['png', 'jpg', 'jpeg']
 if uploaded_image is not None:
     image = Image.open(uploaded_image)
     st.image(image, caption='Test image')
+if st.button('Predict'):
+    image = image.resize((227*227*3,1))
+    vector = np.array(image)
+    label= str(st.write(model.predict(vector))[0])
+
+    st.header('Result')
+    st.text(class_list[label])
