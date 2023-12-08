@@ -7,7 +7,11 @@ import numpy as np
 class_list = {'0': 'Normal', '1': 'Pneumonia'}
 
 st.title('Pneumonia prediction based on chest X-Ray image')
+with open("styles.css") as f:
+    custom_css = f.read()
+st.markdown(f"<style>{custom_css}</style>", unsafe_allow_html=True)
 
+st.image("images.jpeg", use_column_width=True)
 input = open('lrc_xray.pkl','rb')
 model = pkl.load(input)
 
